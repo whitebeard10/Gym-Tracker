@@ -10,12 +10,12 @@ import java.time.LocalDate
  */
 @Dao
 interface WaterLogDao {
-    @Query("SELECT amountLiters FROM water_logs WHERE date = :date")
+    @Query("SELECT amountLiters FROM water_logs WHERE logDate = :date")
     fun getWaterConsumed(date: LocalDate): Flow<Double?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertOrUpdateWater(waterLog: WaterLogEntity)
 
-    @Query("SELECT * FROM water_logs WHERE date = :date")
+    @Query("SELECT * FROM water_logs WHERE logDate = :date")
     suspend fun getWaterLogByDate(date: LocalDate): WaterLogEntity?
 }

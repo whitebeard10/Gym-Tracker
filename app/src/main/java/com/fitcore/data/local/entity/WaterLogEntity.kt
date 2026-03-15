@@ -9,6 +9,6 @@ import java.time.LocalDate
  */
 @Entity(tableName = "water_logs")
 data class WaterLogEntity(
-    @PrimaryKey val date: LocalDate,
+    @PrimaryKey val logDate: LocalDate,
     val amountLiters: Double
 )
