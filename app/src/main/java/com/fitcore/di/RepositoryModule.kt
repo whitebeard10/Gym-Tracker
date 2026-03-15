@@ -3,6 +3,7 @@ package com.fitcore.di
 import com.fitcore.data.local.dao.FoodDao
 import com.fitcore.data.local.dao.FoodLogDao
 import com.fitcore.data.local.dao.MealDao
+import com.fitcore.data.local.dao.WaterLogDao
 import com.fitcore.data.local.dao.WeightDao
 import com.fitcore.data.local.dao.WorkoutDao
 import com.fitcore.data.repository.FoodRepositoryImpl
@@ -25,9 +26,10 @@ object RepositoryModule {
     fun provideMealRepository(
         mealDao: MealDao,
         foodDao: FoodDao,
-        foodLogDao: FoodLogDao
+        foodLogDao: FoodLogDao,
+        waterLogDao: WaterLogDao
     ): MealRepositoryImpl {
-        return MealRepositoryImpl(mealDao, foodDao, foodLogDao)
+        return MealRepositoryImpl(mealDao, foodDao, foodLogDao, waterLogDao)
     }
 
     @Provides
