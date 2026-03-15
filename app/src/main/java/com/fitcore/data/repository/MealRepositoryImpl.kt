@@ -3,12 +3,15 @@ package com.fitcore.data.repository
 import com.fitcore.data.local.dao.MealDao
 import com.fitcore.data.local.dao.FoodDao
 import com.fitcore.data.local.dao.FoodLogDao
+import com.fitcore.data.local.dao.WaterLogDao
 import com.fitcore.data.local.entity.MealEntity
 import com.fitcore.data.local.entity.FoodLogEntry
+import com.fitcore.data.local.entity.WaterLogEntity
 import com.fitcore.domain.model.Food
 import com.fitcore.domain.model.Meal
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 import java.time.LocalDate
 import javax.inject.Inject
@@ -18,7 +21,8 @@ import javax.inject.Singleton
 class MealRepositoryImpl @Inject constructor(
     private val mealDao: MealDao,
     private val foodDao: FoodDao,
-    private val foodLogDao: FoodLogDao
+    private val foodLogDao: FoodLogDao,
+    private val waterLogDao: WaterLogDao
 ) {
     fun getMealsByDate(date: LocalDate): Flow<List<Meal>> {
         return mealDao.getMealsByDate(date).map { entities ->
@@ -42,11 +46,13 @@ class MealRepositoryImpl @Inject constructor(
     }
 
     fun getWaterConsumed(date: LocalDate): Flow<Double> {
-        return mealDao.getWaterConsumed(date).map { it ?: 0.0 }
+        return waterLogDao.getWaterConsumed(date).map { it ?: 0.0 }
     }
 
     suspend fun addWater(date: LocalDate, amount: Double) {
-        mealDao.addWater(date, amount)
+        val currentLog = waterLogDao.getWaterLogByDate(date)
+        val newAmount = (currentLog?.amountLiters ?: 0.0) + amount
+        waterLogDao.insertOrUpdateWater(WaterLogEntity(date, newAmount))
     }
 
     suspend fun addCustomMeal(name: String, time: java.time.LocalTime) {

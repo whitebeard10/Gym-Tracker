@@ -23,9 +23,10 @@ import java.time.LocalTime
         MealEntity::class,
         WorkoutEntity::class,
         WeightEntry::class,
-        FoodLogEntry::class
+        FoodLogEntry::class,
+        WaterLogEntity::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -36,6 +37,7 @@ abstract class FitCoreDatabase : RoomDatabase() {
     abstract fun workoutDao(): WorkoutDao
     abstract fun weightDao(): WeightDao
     abstract fun foodLogDao(): FoodLogDao
+    abstract fun waterLogDao(): WaterLogDao
 
     companion object {
         @Volatile

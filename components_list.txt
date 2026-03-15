@@ -1,0 +1,12 @@
+app/src/main/java/com/fitcore/data
+app/src/main/java/com/fitcore/di
+app/src/main/java/com/fitcore/domain
+app/src/main/java/com/fitcore/notifications
+app/src/main/java/com/fitcore/presentation/theme
+app/src/main/java/com/fitcore/presentation/components
+app/src/main/java/com/fitcore/presentation/home
+app/src/main/java/com/fitcore/presentation/meals
+app/src/main/java/com/fitcore/presentation/log
+app/src/main/java/com/fitcore/presentation/progress
+app/src/main/java/com/fitcore/presentation/settings
+app/src/main/java/com/fitcore/presentation/workout

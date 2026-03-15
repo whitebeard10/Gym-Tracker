@@ -27,10 +27,4 @@ interface MealDao {
 
     @Query("UPDATE meals SET foodIds = :foodIds WHERE id = :mealId")
     suspend fun updateMealFoodIds(mealId: Long, foodIds: List<Long>)
-
-    @Query("SELECT SUM(waterLiters) FROM meals WHERE date = :date")
-    fun getWaterConsumed(date: LocalDate): Flow<Double?>
-
-    @Query("UPDATE meals SET waterLiters = waterLiters + :amount WHERE id = (SELECT id FROM meals WHERE date = :date LIMIT 1)")
-    suspend fun addWater(date: LocalDate, amount: Double)
 }
