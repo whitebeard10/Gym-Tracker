@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="deep_dark_background">#0F0F0F</color>
+    <color name="surface_dark">#1A1A1A</color>
+    <color name="accent_green">#5DCAA5</color>
+    <color name="amber_carbs">#EF9F27</color>
+    <color name="coral_fats">#F0997B</color>
+    <color name="blue_water">#378ADD</color>
+    <color name="teal_done">#009688</color>
+</resources>
