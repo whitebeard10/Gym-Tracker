@@ -26,7 +26,8 @@ FitCore is a comprehensive Android fitness application built with modern develop
 
 ## 📱 Screenshots
 
-<img width="410" height="901" alt="image" src="https://github.com/user-attachments/assets/4557b42d-e98f-4dba-af47-cf5fbd4af62f" /> <img width="407" height="911" alt="image" src="https://github.com/user-attachments/assets/e0686acb-5af5-45a2-a2c3-c0e9bcd3f6d1" /> <img width="407" height="911" alt="image" src="https://github.com/user-attachments/assets/924f1026-d993-4a29-a609-9e359f6f1ee0" />
+<img width="410" height="901" alt="image" src="https://github.com/user-attachments/assets/4557b42d-e98f-4dba-af47-cf5fbd4af62f" /> <img width="407" height="911" alt="image" src="https://github.com/user-attachments/assets/e0686acb-5af5-45a2-a2c3-c0e9bcd3f6d1" />  <img width="408" height="911" alt="image" src="https://github.com/user-attachments/assets/012db778-e51a-432f-ac79-121d32afab71" />
+<img width="407" height="911" alt="image" src="https://github.com/user-attachments/assets/924f1026-d993-4a29-a609-9e359f6f1ee0" />
 
 
 
